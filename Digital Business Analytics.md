@@ -12,29 +12,44 @@
   * Follow the [Prerequisite Action](https://github.com/Dynatrace/easytrade) to create the application that will be used throughout this workshop 
 
 ### What You’ll Learn
-*	Understand Real User Monitoring setup with EasyTrade App
-*	Learn Digital Business Analytics
-*	Learn Dynatrace capabilities, such as
-  *	Bizevents via OneAgentDynatrace Query Language (DQL)
-  *	Gen 3 Dashboard
+-	Understand Real User Monitoring setup with EasyTrade App
+-	Learn Digital Business Analytics
+-	Learn Dynatrace capabilities, such as
+    -	Bizevents via OneAgent
+    -	Dynatrace Query Language (DQL)
+    -	Gen 3 Dashboard
 -	Exporting into Excel and Power BI
 
-Business event capture – Part 1
+### Business event capture – Part 1
 
 To capture business events using OneAgent, you need to first enable the feature.
-1.	Go to Settings > Preferences > OneAgents features.
+1.	Go to **Settings** > **Preferences** > **OneAgents features**.
+``` insert image```
 
 2.	Enable the OneAgent business events feature.
+``` insert image```
 
-Note: You need to restart the application process before you can capture business events from the process.
+> Note: You need to restart the application process before you can capture business events from the process.
 
  
-Business event capture – Part 2
+### Business event capture – Part 2
 
 In this lab, we will use Business event to capture Withdraw business data to Dynatrace
 1.	Assess the easyTrade homepage, and login as James Norton.
- 
-2.	Select Withdraw in the Menu.
- 
+``` insert image ``` 
 
-3.	
+2.	Select Withdraw in the Menu.
+``` insert image ```
+ 
+3.	Open DevTools by pressing Control+Shift+J or Command+Option+J (Mac). The Console panel opens.
+``` insert image ```
+
+4.	Click the **Network** tab. The Network panel opens.
+``` insert image ```
+
+5.	Click **AUTOFILL** and then **WITHDRAW**
+``` insert image ```
+
+6.	
+
+
