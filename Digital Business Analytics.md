@@ -50,8 +50,66 @@ In this lab, we will use Business event to capture Withdraw business data to Dyn
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Network%20Panel.jpg)
 
 5.	Click **AUTOFILL** and then **WITHDRAW**
-``` insert image ```
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Autofill.jpg)
 
-6.	
+6.	Ingest **Withdraw** business event source via the following in **Settings** > **Business Analytics** > **OneAgent Business Event Sources**:
+
+```
+//TODO: Add image
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Network%20Panel.jpg)
+```
+- **Rule Name**: [Easytrade] - Withdraw
+- **Triggers**:
+    - **Add Trigger**:
+        - **Data Source**: Request - Path
+        - **Operators**: ends with
+        - **Value**: withdraw
+    - **Add Trigger**:
+        - **Data Source**: Request - Path
+        - **Operators**: starts with
+- **Event meta data**:
+    - **Event provider**
+        - **Data source**: Fixed value
+        - **Fixed Value**: Withdraw
+- **Event data**:
+    - **Add data field**
+        - **Field name**: accountId
+        - **Data Source**: Request - Body
+        - **Path**: accountId
+    - **Add data field**
+        - **Field name**: address
+        - **Data Source**: Request - Body
+        - **Path**: address
+    - **Add data field**
+        - **Field Name**: amount
+        - **Data Source**: Request - Body
+        - **Path**: amount
+    - **Add data field**
+        - **Field Name**: cardNumber
+        - **Data Source**: Request - Body
+        - **Path** - cardNumber
+    - **Add data field**
+        - **Field Name**: cardType
+        - **Data Source**: Request - Body
+        - **Path**: cardType
+    - **Add data field**
+        - **Field Name**: email
+        - **Data Source**: Request - Body
+        - **Path**: email
+    - **Add data field**
+        - **Field name**: name
+        - **Data Source**: Request - Body
+        - **Path**: name
+
+> Note:
+>  The Trigger is based on the Request URL Path
+
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Add%20Trigger.jpg)
+
+> The Event data is based on the Request Body
+
+
+
+
 
 
