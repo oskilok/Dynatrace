@@ -36,16 +36,18 @@ To capture business events using OneAgent, you need to first enable the feature.
 
 In this lab, we will use Business event to capture Withdraw business data to Dynatrace
 1.	Assess the easyTrade homepage, and login as James Norton.
-``` insert image ``` 
 
-2.	Select Withdraw in the Menu.
-``` insert image ```
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/login.jpg)
+
+2.	Select **Withdraw** in the Menu.
+
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Withdraw.jpg)
  
-3.	Open DevTools by pressing Control+Shift+J or Command+Option+J (Mac). The Console panel opens.
-``` insert image ```
+3.	Open DevTools by pressing **Control+Shift+J** or **Command+Option+J** (Mac). The Console panel opens.
 
 4.	Click the **Network** tab. The Network panel opens.
-``` insert image ```
+
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Network%20Panel.jpg)
 
 5.	Click **AUTOFILL** and then **WITHDRAW**
 ``` insert image ```
