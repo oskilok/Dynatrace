@@ -24,10 +24,10 @@
 
 To capture business events using OneAgent, you need to first enable the feature.
 1.	Go to **Settings** > **Preferences** > **OneAgents features**.
-``` insert image```
 
 2.	Enable the OneAgent business events feature.
-``` insert image```
+
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/OneAgent%20features.jpg)
 
 > Note: You need to restart the application process before you can capture business events from the process.
 
