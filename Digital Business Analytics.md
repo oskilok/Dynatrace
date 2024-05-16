@@ -58,48 +58,51 @@ In this lab, we will use Business event to capture Withdraw business data to Dyn
 //TODO: Add image
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Network%20Panel.jpg)
 ```
-- **Rule Name**: [Easytrade] - Withdraw
-- **Triggers**:
-    - **Add Trigger**:
-        - **Data Source**: Request - Path
-        - **Operators**: ends with
-        - **Value**: withdraw
-    - **Add Trigger**:
-        - **Data Source**: Request - Path
+
+<pre>
+- <b>Rule Name</b>: [Easytrade] - Withdraw
+- <b>Triggers</b>:
+    - <b>Add Trigger</b>:
+        - <b>Data Source</b>: Request - Path
+        - <b>Operators</b>: ends with
+        - <b>Value</b>: withdraw
+    - <b>Add Trigger</b>:
+        - <b>Data Source</b>: Request - Path
         - **Operators**: starts with
-- **Event meta data**:
-    - **Event provider**
-        - **Data source**: Fixed value
-        - **Fixed Value**: Withdraw
-- **Event data**:
-    - **Add data field**
-        - **Field name**: accountId
-        - **Data Source**: Request - Body
-        - **Path**: accountId
-    - **Add data field**
-        - **Field name**: address
-        - **Data Source**: Request - Body
-        - **Path**: address
-    - **Add data field**
-        - **Field Name**: amount
-        - **Data Source**: Request - Body
-        - **Path**: amount
-    - **Add data field**
-        - **Field Name**: cardNumber
-        - **Data Source**: Request - Body
-        - **Path** - cardNumber
-    - **Add data field**
-        - **Field Name**: cardType
-        - **Data Source**: Request - Body
-        - **Path**: cardType
-    - **Add data field**
-        - **Field Name**: email
-        - **Data Source**: Request - Body
-        - **Path**: email
-    - **Add data field**
-        - **Field name**: name
-        - **Data Source**: Request - Body
-        - **Path**: name
+- <b>Event meta data</b>:
+    - <b>Event provider</b>
+        - <b>Data source</b>: Fixed value
+        - <b>Fixed Value</b>: Withdraw
+- <b>Event data</b>:
+    - <b>Add data field</b>
+        - <b>Field name</b>: accountId
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b>: accountId
+    - <b>Add data field</b>
+        - <b>Field name</b>: address
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b>: address
+    - <b>Add data field</b>
+        - <b>Field Name</b>: amount
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b>: amount
+    - <b>Add data field</b>
+        - <b>Field Name</b>: cardNumber
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b> - cardNumber
+    - <b>Add data field</b>
+        - <b>Field Name</b>: cardType
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b>: cardType
+    - <b>Add data field</b>
+        - <b>Field Name</b>: email
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b>: email
+    - <b>Add data field</b>
+        - <b>Field name</b>: name
+        - <b>Data Source</b>: Request - Body
+        - <b>Path</b>: name
+</pre>
 
 > Note:
 >  The Trigger is based on the Request URL Path
