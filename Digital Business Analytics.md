@@ -1,7 +1,10 @@
 # Digital Business Analytics with Dynatrace
 
 ## Bridging the Gap to the Business
+```
+\\TODO
  This Repo contains the lab to automate the process
+```
 
 ### Prerequisites
 
@@ -9,7 +12,8 @@
   * Get your free SaaS trial [here](https://www.dynatrace.com/signup/)
 * Sample Application
   * Sample Application is based on easyTrade
-  * Follow the [Prerequisite Action](https://github.com/Dynatrace/easytrade) to create the application that will be used throughout this workshop 
+  * Follow the [Prerequisite Action](https://github.com/Dynatrace/easytrade) to create the application that will be used throughout this workshop
+    
 
 ### What You’ll Learn
 -	Understand Real User Monitoring setup with EasyTrade App
@@ -19,6 +23,22 @@
     -	Dynatrace Query Language (DQL)
     -	Gen 3 Dashboard
 -	Exporting into Excel and Power BI
+
+
+### Why Bizevents
+
+Business events powered by our new Grail™ data lakehouse and by other Dynatrace platform technologies ensures the real-time precision that business and IT teams need to make data-driven decisions and improve business outcomes. Business events deliver the industry’s broadest, deepest, and easiest access to your critical business data. Powered by Grail, you can now unify, store, and instantly analyze massive volumes of business data from anywhere, automatically enriched with the IT context needed to unlock precise AI-powered answers and automation.
+
+
+### How Bizevents Works
+
+![alt_text](https://github.com/oskilok/Dynatrace/blob/main/Images/Bizevents.png)
+
+1. Business event sources include OneAgent, web and mobile RUM sessions, external business tools via a public API, and log files.
+2. Business events are processed through the ingest pipeline using the Dynatrace Query Language (DQL) to transform and enrich the data and set retention periods.
+3. Grail unifies business and IT observability data from all sources, leveraging the Smartscape® dependency model to automatically build causational context.
+4. Dynatrace Query Language provides exploratory analytics through ad hoc queries without the need to index. Explore interactively with the Log and event explorer, pin your queries to dashboard tiles, or execute queries via the API.
+
 
 ### Business event capture – Part 1
 
@@ -54,10 +74,7 @@ In this lab, we will use Business event to capture Withdraw business data to Dyn
 
 6.	Ingest **Withdraw** business event source via the following in **Settings** > **Business Analytics** > **OneAgent Business Event Sources**:
 
-```
-//TODO: Add image
-![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Network%20Panel.jpg)
-```
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Ingestion%20Rule.jpg)
 
 <pre>
 - <b>Rule Name</b>: [Easytrade] - Withdraw
@@ -109,7 +126,18 @@ In this lab, we will use Business event to capture Withdraw business data to Dyn
 
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Add%20Trigger.jpg)
 
-> The Event data is based on the Request Body
+> The Event data is based on the Request Body as shown in the [architecture diagram](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1balanceaccountidwithdraw-withdraw-money-to-the-account)
+
+To validate that the log ingestion rule has been properly set up. 
+1. Open **Logs and Events** App
+2. Switch to **Advanced mode**
+3. Run the following DQL commands
+
+```
+fetch bizevents
+| filter event.type == "Withdraw"
+```
+![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Logs%20and%20events.jpg)
 
 
 
