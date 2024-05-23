@@ -139,7 +139,10 @@ fetch bizevents
 ```
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Logs%20and%20events.jpg)
 
-
+**Repeat the previous steps for the following:**
+- Buy
+- Sell
+- Deposit
 
 
 
