@@ -1,4 +1,4 @@
-![image](https://github.com/oskilok/Dynatrace/assets/167146545/1836720d-5164-40dd-b367-c0372a7b9b18)# Digital Business Analytics with Dynatrace
+# Digital Business Analytics with Dynatrace
 
 ## Bridging the Gap to the Business
 ```
