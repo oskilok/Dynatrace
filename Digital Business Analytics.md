@@ -139,9 +139,6 @@ fetch bizevents
 ```
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Logs%20and%20events.jpg)
 
-> Note:
-> Dynatrace automatically enriches business events with additional context to enhance analysis and facilitate drill-down navigation. For more information, refer to the following [documentation](https://docs.dynatrace.com/docs/platform-modules/business-analytics/ba-events-enrichment#oneagent-and-external-business-event-enrichment). 
-Furthermore, it enables you to use other Dynatrace technology platforms to get deeper insights into your critical business data.
 
 
 
