@@ -1,4 +1,4 @@
-# Digital Business Analytics with Dynatrace
+![image](https://github.com/oskilok/Dynatrace/assets/167146545/1836720d-5164-40dd-b367-c0372a7b9b18)# Digital Business Analytics with Dynatrace
 
 ## Bridging the Gap to the Business
 ```
@@ -138,6 +138,12 @@ fetch bizevents
 | filter event.type == "Withdraw"
 ```
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Logs%20and%20events.jpg)
+
+> Note:
+> Dynatrace automatically enriches business events with additional context to enhance analysis and facilitate drill-down navigation. For more information, refer to the following [documentation](https://docs.dynatrace.com/docs/platform-modules/business-analytics/ba-events-enrichment#oneagent-and-external-business-event-enrichment). 
+Furthermore, it enables you to use other Dynatrace technology platforms to get deeper insights into your critical business data.
+
+
 
 **Repeat the previous steps for the following:**
 - Buy
