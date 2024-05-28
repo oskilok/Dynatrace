@@ -1,10 +1,11 @@
 # Digital Business Analytics with Dynatrace
 
 ## Bridging the Gap to the Business
+
 ```
-\\TODO
+\\TO EDIT
  This Repo contains the lab to automate the process
-```
+
 
 ### Prerequisites
 
@@ -23,7 +24,7 @@
     -	Dynatrace Query Language (DQL)
     -	Gen 3 Dashboard
 -	Exporting into Excel and Power BI
-
+```
 
 ### Why Bizevents
 
@@ -143,9 +144,9 @@ fetch bizevents
 
 
 **Repeat the previous steps for the following:**
-- Buy
-- Sell
-- Deposit
+- [Buy](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1tradebuy-quick-buy)
+- [Sell](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1tradelongsell-long-sell)
+- [Deposit](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1balanceaccountiddeposit-deposit-money-to-the-account) 
 
 
 
