@@ -1,10 +1,6 @@
-# Digital Business Analytics with Dynatrace
+# Capture Business Events via OneAgent
 
-## Bridging the Gap to the Business
-
-```
-\\TO EDIT
- This Repo contains the lab to automate the process
+ This repository contains a lab that provides a step-by-step guide on how Business Events (Bizevents) can be captured using OneAgent.
 
 
 ### Prerequisites
@@ -15,16 +11,6 @@
   * Sample Application is based on easyTrade
   * Follow the [Prerequisite Action](https://github.com/Dynatrace/easytrade) to create the application that will be used throughout this workshop
     
-
-### What You’ll Learn
--	Understand Real User Monitoring setup with EasyTrade App
--	Learn Digital Business Analytics
--	Learn Dynatrace capabilities, such as
-    -	Bizevents via OneAgent
-    -	Dynatrace Query Language (DQL)
-    -	Gen 3 Dashboard
--	Exporting into Excel and Power BI
-```
 
 ### Why Bizevents
 
@@ -77,6 +63,8 @@ In this lab, we will use Business event to capture Withdraw business data to Dyn
 
 ![alt text](https://github.com/oskilok/Dynatrace/blob/main/Images/Ingestion%20Rule.jpg)
 
+
+
 <pre>
 - <b>Rule Name</b>: [Easytrade] - Withdraw
 - <b>Triggers</b>:
@@ -86,7 +74,7 @@ In this lab, we will use Business event to capture Withdraw business data to Dyn
         - <b>Value</b>: withdraw
     - <b>Add Trigger</b>:
         - <b>Data Source</b>: Request - Path
-        - **Operators**: starts with
+        - <b>Operators</b>: starts with
 - <b>Event meta data</b>:
     - <b>Event provider</b>
         - <b>Data source</b>: Fixed value
@@ -145,9 +133,193 @@ fetch bizevents
 
 **Repeat the previous steps for the following:**
 - [Buy](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1tradebuy-quick-buy)
+
+    <details>
+    <summary> Sample answers </summary>
+
+    - <b>Rule Name</b>: [Easytrade] - Buy
+    - <b>Triggers</b>:
+        - <b>Add Trigger</b>:
+            - <b>Data Source</b>: Request - HTTP Method
+            - <b>Operators</b>: equals
+            - <b>Value</b>: POST
+        - <b>Add Trigger</b>:
+            - <b>Data Source</b>: Request - Path
+            - <b>Operators</b>: equals
+            - <b>Value</b>: /broker-service/v1/trade/buy
+    - <b>Event meta data</b>:
+        - <b>Event provider</b>
+            - <b>Data source</b>: Fixed value
+            - <b>Fixed Value</b>: easyTrade
+        - <b>Event type</b>
+            - <b>Data source</b>: Fixed value
+            - <b>Fixed value</b>: Buy
+        - <b>Event category</b>
+            - <b>Data source</b>: Request - Path
+    - <b>Event data</b>:
+        - <b>Add data field</b>
+            - <b>Field name</b>: accountId
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: accountId
+        - <b>Add data field</b>
+            - <b>Field name</b>: direction
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: direction
+        - <b>Add data field</b>
+            - <b>Field Name</b>: entryPrice
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: entryPrice
+        - <b>Add data field</b>
+            - <b>Field Name</b>: instrumentId
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b> - instrumentId
+        - <b>Add data field</b>
+            - <b>Field Name</b>: quantity
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: quantity
+        - <b>Add data field</b>
+            - <b>Field Name</b>: status
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: status
+        - <b>Add data field</b>
+            - <b>Field name</b>: timestampClose
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: timestampClose
+        - <b>Add data field</b>
+            - <b>Field name</b>: timestampOpen
+            - <b>Data Source</b>: Respone - Body
+            - <b>Path</b>: timestampOpen
+        - <b>Add data field</b>
+            - <b>Field name</b>: tradeClosed
+            - <b>Data source</b>: Response - Body
+            - <b>Path</b>: tradeClosed
+        - <b>Add data field</b>
+            - <b>Field name</b>: transactionHappened
+            - <b>Data source</b>: Response - Body
+            - <b>Path</b>: transactionHappened
+
+    </details>
+
 - [Sell](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1tradelongsell-long-sell)
+
+    <details>
+    <summary> Sample answers </summary>
+
+    - <b>Rule Name</b>: [Easytrade] - Sell
+    - <b>Triggers</b>:
+        - <b>Add Trigger</b>:
+            - <b>Data Source</b>: Request - HTTP Method
+            - <b>Operators</b>: equals
+            - <b>Value</b>: POST
+        - <b>Add Trigger</b>:
+            - <b>Data Source</b>: Request - Path
+            - <b>Operators</b>: equals
+            - <b>Value</b>: /broker-service/v1/trade/sell
+    - <b>Event meta data</b>:
+        - <b>Event provider</b>
+            - <b>Data source</b>: Fixed value
+            - <b>Fixed Value</b>: easyTrade
+        - <b>Event type</b>
+            - <b>Data source</b>: Fixed value
+            - <b>Fixed value</b>: Sell
+        - <b>Event category</b>
+            - <b>Data source</b>: Request - Path
+    - <b>Event data</b>:
+        - <b>Add data field</b>
+            - <b>Field name</b>: direction
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: direction
+        - <b>Add data field</b>
+            - <b>Field Name</b>: entryPrice
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: entryPrice
+        - <b>Add data field</b>
+            - <b>Field Name</b>: instrumentId
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b> - instrumentId
+        - <b>Add data field</b>
+            - <b>Field Name</b>: quantity
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: quantity
+        - <b>Add data field</b>
+            - <b>Field Name</b>: status
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: status
+        - <b>Add data field</b>
+            - <b>Field name</b>: timestampClose
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: timestampClose
+        - <b>Add data field</b>
+            - <b>Field name</b>: timestampOpen
+            - <b>Data Source</b>: Respone - Body
+            - <b>Path</b>: timestampOpen
+        - <b>Add data field</b>
+            - <b>Field name</b>: tradeClosed
+            - <b>Data source</b>: Response - Body
+            - <b>Path</b>: tradeClosed
+        - <b>Add data field</b>
+            - <b>Field name</b>: transactionHappened
+            - <b>Data source</b>: Response - Body
+            - <b>Path</b>: transactionHappened
+
+    </details>
+
 - [Deposit](https://github.com/Dynatrace/easytrade/blob/main/docs/broker-service.md#post-v1balanceaccountiddeposit-deposit-money-to-the-account) 
 
+    <details>
+    <summary> Sample answers </summary>
 
+    - <b>Rule Name</b>: [Easytrade] - Deposit
+    - <b>Triggers</b>:
+        - <b>Add Trigger</b>:
+            - <b>Data Source</b>: Request - Path
+            - <b>Operators</b>: ends with
+            - <b>Value</b>: /deposit
+        - <b>Add Trigger</b>:
+            - <b>Data Source</b>: Request - Path
+            - <b>Operators</b>: starts with
+            - <b>Value</b>: /broker-service/v1/balance
+    - <b>Event meta data</b>:
+        - <b>Event provider</b>
+            - <b>Data source</b>: Fixed value
+            - <b>Fixed Value</b>: easyTrade
+        - <b>Event type</b>
+            - <b>Data source</b>: Fixed value
+            - <b>Fixed value</b>: Deposit
+        - <b>Event category</b>
+            - <b>Data source</b>: Request - Path
+    - <b>Event data</b>:
+        - <b>Add data field</b>
+            - <b>Field name</b>: accountId
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: accountId
+        - <b>Add data field</b>
+            - <b>Field name</b>: address
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: address
+        - <b>Add data field</b>
+            - <b>Field Name</b>: amount
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: amount
+        - <b>Add data field</b>
+            - <b>Field Name</b>: cardNumber
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b> - cardNumber
+        - <b>Add data field</b>
+            - <b>Field Name</b>: cardType
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: cardType
+        - <b>Add data field</b>
+            - <b>Field Name</b>: email
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: email
+        - <b>Add data field</b>
+            - <b>Field name</b>: name
+            - <b>Data Source</b>: Request - Body
+            - <b>Path</b>: name
+        - <b>Add data field</b>
+            - <b>Field name</b>: value
+            - <b>Data Source</b>: Response - Body
+            - <b>Path</b>: value
 
-
+    </details>
