@@ -1,6 +1,6 @@
 # Capture Business Events via OneAgent
 
- This repository contains a lab that provides a step-by-step guide on how Business Events (Bizevents) can be captured using OneAgent.
+ This repository contains a lab that provides a step-by-step guide on how Business Events (Bizevents) can be captured using OneAgent. 
 
 
 ### Prerequisites
